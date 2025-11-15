@@ -21,7 +21,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> getAllBook() {
         try {
-            return this.bookRepository.findAll();
+            return this.bookRepository.GetAllBookNotDeleted();
         }
         catch (Exception e){
             System.out.println("Error Get All Book: " + e.getMessage());

@@ -17,11 +17,17 @@ public class Sales extends CommonEntity{
     @JoinColumn(name = "bookId", insertable = false, updatable = false)
     public Book book;
 
+    @Column(name = "customerName")
+    private String customerName;
+
     @Column(name = "bookAmount")
     private int bookAmount;
 
     @Column(name = "priceAmount")
     private Double priceAmount;
+
+    @Column(name = "status")
+    private String status;
 
     public Long getId() {
         return Id;
@@ -47,6 +53,14 @@ public class Sales extends CommonEntity{
         this.book = book;
     }
 
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
     public int getBookAmount() {
         return bookAmount;
     }
@@ -61,5 +75,13 @@ public class Sales extends CommonEntity{
 
     public void setPriceAmount(Double priceAmount) {
         this.priceAmount = priceAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
